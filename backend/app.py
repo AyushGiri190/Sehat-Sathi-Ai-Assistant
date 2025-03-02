@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
+from PIL import Image
+from lungcancer import predict_image_lung
 app = Flask(__name__)
 CORS(app)  # Allow all origins (for development)
 
@@ -12,11 +13,28 @@ def upload_image():
     file = request.files['image']
     if file.filename == '':
         return jsonify({"message": "No selected file"}), 400
-
+    image = Image.open(file) 
     # You can save the file if needed
     file.save(f"./{file.filename}")
 
     return jsonify({"message": "Image received successfully"}), 200
+
+
+
+@app.route('/check_lung_cancer', methods=["POST","GET"])
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({"message": "No file part"}), 400
+
+    file = request.files['image']
+    if file.filename == '':
+        return jsonify({"message": "No selected file"}), 400
+    image = Image.open(file) 
+    # You can save the file if needed
+    file.save(f"./{file.filename}")
+    predict_image_lung(f"./{file.filename}")
+    return jsonify({"message": "Image received successfully"}), 200
+
 
 
 @app.route("/check-age", methods=["POST","GET"])
