@@ -19,9 +19,9 @@ const Navbar = () => {
 
       {/* Centered Navigation Links */}
       <div className="hidden md:flex space-x-8 text-white font-semibold">
-        <Link href="/" className="hover:text-gray-400">Home</Link>
-        <Link href="/blog" className="hover:text-gray-400">Blog</Link>
-        <Link href="/contact" className="hover:text-gray-400">Contact</Link>
+        <Link href="/" className="hover:text-[#df86aa]">Home</Link>
+        <Link href="/blog" className="hover:text-[#df86aa]">Blog</Link>
+        <Link href="/contact" className="hover:text-[#df86aa]">Contact</Link>
       </div>
  
       {/* Mobile Menu */}
