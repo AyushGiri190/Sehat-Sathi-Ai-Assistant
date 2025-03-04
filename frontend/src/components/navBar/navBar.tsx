@@ -20,7 +20,7 @@ const Navbar = () => {
       {/* Centered Navigation Links */}
       <div className="hidden md:flex space-x-8 text-white font-semibold">
         <Link href="/" className="hover:text-[#df86aa]">Home</Link>
-        <Link href="/blog" className="hover:text-[#df86aa]">Blog</Link>
+        <Link href="/faq" className="hover:text-[#df86aa]">Faq</Link>
         <Link href="/contact" className="hover:text-[#df86aa]">Contact</Link>
       </div>
  
@@ -35,7 +35,7 @@ const Navbar = () => {
           <SheetContent side="left" className="bg-[#0B0C10] text-white">
             <div className="flex flex-col space-y-4 mt-6">
               <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-              <Link href="/blog" onClick={() => setOpen(false)}>Blog</Link>
+              <Link href="/blog" onClick={() => setOpen(false)}>Faq</Link>
               <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
             </div>
           </SheetContent>

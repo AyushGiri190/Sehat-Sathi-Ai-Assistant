@@ -14,7 +14,7 @@ const BlogPost = () => {
             {/* Content */}
             <div className="grid md:grid-cols-2 gap-20 mt-12 max-w-5xl mx-auto px-6 md:px-10">
                 {/* Left Content */}
-                <div className="space-y-20">
+                <div className="space-y-10">
                     <div>
                         <h2 className="text-xl font-semibold flex items-center gap-2 mt-2">
                             <span className="text-pink-500 text-3xl">●</span> Who We Are?
@@ -32,12 +32,6 @@ const BlogPost = () => {
                             Sehat-Sathi is here to assist you with reliable health insights. Whether you need help understanding a diagnosis, learning preventive measures, or using our AI tools, we are committed to guiding you at every step.
                         </p>
                     </div>
-                </div>
-
-                {/* Right Content (Image + Vision) */}
-                <div className="flex flex-col items-center md:items-start space-y-10">
-                    <Image src="/blog.jpeg" alt="Sehat-Sathi" width={300} height={220} className="rounded-lg" />
-
                     <div>
                         <h2 className="text-xl font-semibold flex items-center gap-2">
                             <span className="text-pink-500 text-3xl">●</span> Vision
@@ -46,6 +40,13 @@ const BlogPost = () => {
                             Our vision is to make healthcare easy and accessible with AI. We aim to help people detect diseases early and stay healthy with reliable guidance.
                         </p>
                     </div>
+                </div>
+
+                {/* Right Content (Image + Vision) */}
+                <div className="flex flex-col items-center md:items-start space-y-10 mt-16 ml-10">
+                    <Image src="/blog.jpeg" alt="Sehat-Sathi" width={400} height={400} className="rounded-lg" />
+
+                    
                 </div>
             </div>
         </div>
