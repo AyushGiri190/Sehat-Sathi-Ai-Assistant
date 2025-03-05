@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { X, CloudUpload } from "lucide-react"; // Cloud Upload icon
 import { useDropzone } from "react-dropzone"; // Importing useDropzone for drag-and-drop
 
-const LungImgUp = () => {
+const TuberImgUp = () => {
   const [progress, setProgress] = React.useState<number>(0);
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
   const [imageUrl, setImageUrl] = React.useState<string | null>(null);
@@ -59,10 +59,13 @@ const LungImgUp = () => {
   });
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#0D0D1F]">
-      <Card className="w-[750px] h-[550px]">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F]">
+      <h2 className="text-center text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6">
+        Upload MRI Scan for Tuberculosis Analysis
+      </h2>
+      <Card className="w-[750px] h-[550px] border-4 mt-2">
         <CardHeader className="flex flex-col items-center justify-center text-center mt-10">
-          <CardTitle>Lung Cancer Prediction</CardTitle>
+          <CardTitle>Tuberculosis Prediction</CardTitle>
           <CardDescription>Drop an image or click to upload – let AI do the rest!</CardDescription>
         </CardHeader>
 
@@ -201,4 +204,4 @@ const LungImgUp = () => {
   );
 };
 
-export default LungImgUp;
+export default TuberImgUp;

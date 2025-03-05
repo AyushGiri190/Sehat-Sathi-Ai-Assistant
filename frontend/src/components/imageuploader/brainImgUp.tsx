@@ -55,12 +55,16 @@ const BrainImgUp = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: {"image/*":[]},
+    accept: { "image/*": [] },
   });
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#0D0D1F]">
-      <Card className="w-[750px] h-[550px]">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F]">
+      <h2 className="text-center text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6">
+        Upload MRI Scan for Brain Tumor Analysis
+      </h2>
+
+      <Card className="w-[750px] h-[550px] mt-2 border-4">
         <CardHeader className="flex flex-col items-center justify-center text-center mt-10">
           <CardTitle>Brain Cancer Prediction</CardTitle>
           <CardDescription>Drop an image or click to upload – let AI do the rest!</CardDescription>
@@ -84,9 +88,9 @@ const BrainImgUp = () => {
                 </p>
                 {/* Upload button */}
                 <Label htmlFor="picture" className="cursor-pointer flex flex-col items-center justify-center gap-2 p-3 transition-all duration-300 ease-in-out transform hover:scale-105">
-                <button className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
-  Click to upload an image
-</button>
+                  <button className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
+                    Click to upload an image
+                  </button>
                   <Input
                     id="picture"
                     type="file"
