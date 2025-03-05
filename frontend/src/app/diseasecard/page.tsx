@@ -5,7 +5,7 @@ import { TuberCancer } from "@/components/diseaseCards/tuberCancer";
 import Navbar from "@/components/navBar/navBar";
 export default function HomePage() {
     return (
-      <div>
+      <div className="bg-[#0D0D1F]">
         <Navbar/>
       <div className="flex justify-center items-center min-h-screen">
         <div className="grid grid-cols-4 gap-4">

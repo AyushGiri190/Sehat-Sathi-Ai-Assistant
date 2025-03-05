@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import {
   Card,
@@ -13,7 +14,7 @@ const breastCancerLogo = "/body.png";
 
 export function BreastCancer() {
   return (
-    <Card>
+    <Card >
       {/* Wrapping image and title inside a flex div */}
       <CardHeader>
         <div className="flex items-center gap-2">
@@ -24,16 +25,17 @@ export function BreastCancer() {
             height={50}
             className="rounded-full filter invert brightness-100 opacity-60"
           />
-          <CardTitle >Breast Cancer</CardTitle>
+          <CardTitle >Chest Cancer</CardTitle>
         </div>
       </CardHeader>
       <CardContent>
-        <p>Breast cancer is a disease where cells in the breast grow uncontrollably.</p>
+        <p>Chest cancer is a disease where cells in the Chest grow uncontrollably.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
+        <Link href="/imageuploader/chestup">
               <button className="bg-white text-black px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-300 transition">
                 Know more
-              </button>
+              </button></Link>
             </CardFooter>
     </Card>
   );
