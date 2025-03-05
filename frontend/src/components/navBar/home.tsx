@@ -44,8 +44,8 @@ const HomePage = () => {
         {/* Right Section: Floating Image */}
         <div className="absolute right-2 bottom-2 md:right-16 md:bottom-8">
           <Image
-            src="/roket.png"
-            alt="Floating Rocket"
+            src="/home.png"
+            alt="Floating "
             width={400}
             height={398}
             className="animate-float"

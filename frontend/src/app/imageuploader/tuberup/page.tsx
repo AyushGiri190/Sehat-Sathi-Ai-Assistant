@@ -1,11 +1,13 @@
-import LungImgUp from "@/components/imageuploader/lungImgUp";
+import TuberImgUp from "@/components/imageuploader/tuberImgUp";
 import Navbar from "@/components/navBar/navBar";
+import TuberPage from "@/components/page/knoTuber";
 
 function page() {
   return (
     <div className="bg-[#0D0D1F]">
       <Navbar/>
-      <LungImgUp/>
+      <TuberPage/>
+      <TuberImgUp/>
     </div>
     
   )
