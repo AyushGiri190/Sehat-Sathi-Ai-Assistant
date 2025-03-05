@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import Link from "next/link";
 import Image from "next/image";
 
 import {
@@ -8,12 +8,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card" 
 
 const skinCancerLogo = "/skin-cancer.png";
 export function SkinCancer() {
   return (
-    <Card >
+    <Card>
       <CardHeader>
       <div className="flex items-center gap-2">
           <Image
@@ -30,9 +30,11 @@ export function SkinCancer() {
         <p>Skin cancer is a disease where cells in the breast grow uncontrollably.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
+       <Link href="/imageuploader/skinup">
               <button className="bg-white text-black px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-300 transition">
                 Know more
               </button>
+              </Link>
             </CardFooter>
     </Card>
   )

@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import Link from "next/link";
 import Image from "next/image";
 
 import {
@@ -9,11 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
+ 
 const tuberCancerLogo = "/brain.png";
 export function TuberCancer() {
   return (
-    <Card >
+    <Card  >
       <CardHeader >
       <div className="flex items-center gap-2">
           <Image
@@ -30,9 +30,11 @@ export function TuberCancer() {
         <p>Tuber cancer is a disease where cells in the breast grow uncontrollably.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
+       <Link href="/imageuploader/tuberup">
               <button className="bg-white text-black px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-300 transition">
                 Know more
               </button>
+              </Link>
             </CardFooter>
     </Card>
   )
