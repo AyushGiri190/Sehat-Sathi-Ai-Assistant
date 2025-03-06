@@ -1,21 +1,21 @@
-import BrainImgUp from "@/components/imageuploader/brainImgUp"
-import Navbar from "@/components/navBar/navBar"
-import BrainTumourPage from "@/components/page/knoBrain"
+import BrainImgUp from "@/components/imageuploader/brainImgUp";
+import Navbar from "@/components/navBar/navBar";
+import BrainTumourPage from "@/components/page/knoBrain";
+import ScrollBar from "@/components/contact/scrollbar"; // Import ScrollBar component
 
-
-function page() {
+function Page() {
   return (
-    <div className="bg-[#0D0D1F] min-h-screen">
+    <div className="bg-[#0D0D1F] h-screen overflow-hidden"> {/* Prevents body scrollbar */}
       <Navbar />
-      <BrainTumourPage />
-      {/* <h2 className="text-center text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6">
-        Upload MRI Scan for Brain Tumor Analysis
-      </h2> */}
+      <ScrollBar /> {/* Injects custom scrollbar styles */}
 
-      <BrainImgUp />
+      {/* Scrollable Content */}
+      <div className="custom-scrollbar h-screen overflow-y-auto">
+        <BrainTumourPage />
+        <BrainImgUp />
+      </div>
     </div>
-
-  )
+  );
 }
 
-export default page
+export default Page;
