@@ -21,19 +21,22 @@ def upload_image():
 
 
 
-@app.route('/check_lung_cancer', methods=["POST","GET"])
-def upload_image():
+@app.route('/checklungcancer', methods=["POST","GET"])
+def upload_image_lung():
     if 'image' not in request.files:
         return jsonify({"message": "No file part"}), 400
 
     file = request.files['image']
     if file.filename == '':
         return jsonify({"message": "No selected file"}), 400
-    image = Image.open(file) 
+    # image = Image.open(file) 
+    image = Image.open(file)  # Open image
+    image = image.resize((224, 224))
     # You can save the file if needed
     file.save(f"./{file.filename}")
-    predict_image_lung(f"./{file.filename}")
-    return jsonify({"message": "Image received successfully"}), 200
+    prediction = predict_image_lung(image)
+    # prediction="hello"
+    return jsonify({"message": f"{prediction}"}), 200
 
 
 
