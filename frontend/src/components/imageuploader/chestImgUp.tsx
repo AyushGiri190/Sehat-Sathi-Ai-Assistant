@@ -6,6 +6,10 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { X, CloudUpload } from "lucide-react"; // Cloud Upload icon
 import { useDropzone } from "react-dropzone"; // Importing useDropzone for drag-and-drop
+import { Button } from "../ui/button";
+import axiosInstance from "@/lib/axiosInstance";
+
+
 
 const ChestImgUp = () => {
   const [progress, setProgress] = React.useState<number>(0);
@@ -45,6 +49,29 @@ const ChestImgUp = () => {
     setErrorMessage(null);
   };
 
+  const handleUpload = async () => {
+
+    if (!selectedFile) {
+      setErrorMessage("No file selected!");
+      return;
+    }
+   const formData = new FormData();
+    formData.append("image", selectedFile);
+    
+
+    try {
+    const response = await axiosInstance.post("/checklungcancer", formData, {
+         headers: { "Content-Type": "multipart/form-data" },
+      });
+
+     console.log(`${response.data.message}`);
+    } catch (error) {
+     console.error("Upload Error:", error);
+     console.log("❌ Error: Failed to upload image.");
+     }
+  };
+
+
   // Drag-and-drop handlers from useDropzone
   const onDrop = (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -55,7 +82,7 @@ const ChestImgUp = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-    accept: {"image/*":[]},
+    accept: { "image/*": [] },
   });
 
   return (
@@ -87,9 +114,10 @@ const ChestImgUp = () => {
                 </p>
                 {/* Upload button */}
                 <Label htmlFor="picture" className="cursor-pointer flex flex-col items-center justify-center gap-2 p-3 transition-all duration-300 ease-in-out transform hover:scale-105">
-                <button className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
-  Click to upload an image
-</button>
+                  <button className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
+                    Click to upload an image
+                  </button>
+                  
                   <Input
                     id="picture"
                     type="file"
@@ -98,7 +126,7 @@ const ChestImgUp = () => {
                     {...getInputProps()}
                   />
                 </Label>
-
+                
                 {/* Error Message */}
                 {errorMessage && <p className="text-sm text-red-500">{errorMessage}</p>}
 
@@ -168,7 +196,7 @@ const ChestImgUp = () => {
                           </circle>
                         </svg>
                       </div>
-
+                     
                       {/* Progress Percentage */}
                       <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-white">
                         {progress}%
@@ -198,8 +226,13 @@ const ChestImgUp = () => {
               </div>
             )}
           </Card>
+          <button onClick ={handleUpload} className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
+upload Image
+</button>
         </CardContent>
+        
       </Card>
+      
     </div>
   );
 };
