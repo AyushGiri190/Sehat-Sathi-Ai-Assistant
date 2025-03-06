@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { X, CloudUpload } from "lucide-react"; // Cloud Upload icon
 import { useDropzone } from "react-dropzone"; // Importing useDropzone for drag-and-drop
+import axiosInstance from "@/lib/axiosInstance";
 
 const SkinImgUp = () => {
   const [progress, setProgress] = React.useState<number>(0);
@@ -37,7 +38,28 @@ const SkinImgUp = () => {
       }
     }, 300);
   };
+  const handleUpload = async () => {
 
+    if (!selectedFile) {
+      setErrorMessage("No file selected!");
+      return;
+    }
+    alert("Image is successfully uploaded");
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+
+
+    try {
+      const response = await axiosInstance.post("/checklungcancer", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      console.log(`${response.data.message}`);
+    } catch (error) {
+      console.error("Upload Error:", error);
+      console.log("❌ Error: Failed to upload image.");
+    }
+  };
   const handleRemoveImage = () => {
     setSelectedFile(null);
     setImageUrl(null);
@@ -59,7 +81,7 @@ const SkinImgUp = () => {
   });
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F]">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F] mb-20">
       <h2 className="text-center text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6">
         Upload MRI Scan for Skin Cancer Analysis
       </h2>
@@ -200,6 +222,9 @@ const SkinImgUp = () => {
           </Card>
         </CardContent>
       </Card>
+      <button onClick={handleUpload} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        Upload Image
+      </button>
     </div>
   );
 };

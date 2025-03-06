@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { X, CloudUpload } from "lucide-react"; // Cloud Upload icon
 import { useDropzone } from "react-dropzone"; // Importing useDropzone for drag-and-drop
-import { Button } from "../ui/button";
 import axiosInstance from "@/lib/axiosInstance";
 
 
@@ -55,6 +54,7 @@ const ChestImgUp = () => {
       setErrorMessage("No file selected!");
       return;
     }
+    alert("Image is successfully uploaded");
    const formData = new FormData();
     formData.append("image", selectedFile);
     
@@ -86,7 +86,7 @@ const ChestImgUp = () => {
   });
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F]">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F] mb-20">
       <h2 className="text-center text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6">
         Upload MRI Scan for Chest Cancer Analysis
       </h2>
@@ -226,12 +226,15 @@ const ChestImgUp = () => {
               </div>
             )}
           </Card>
-          <button onClick ={handleUpload} className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
+          {/* <button onClick ={handleUpload} className="px-2 py-2 text-s bg-white text-black rounded-xl hover:bg-gray-300 hover:text-white">
 upload Image
-</button>
+</button> */}
         </CardContent>
         
       </Card>
+      <button onClick={handleUpload} className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+        Upload Image
+      </button>
       
     </div>
   );
