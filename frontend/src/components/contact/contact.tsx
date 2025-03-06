@@ -59,7 +59,7 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 {/* Contact Form Section */}
-                <div className="w-full max-w-6xl mt-16 p-10 bg-[#1a1a2e] rounded-xl shadow-md text-center mb-16">
+                <div className="w-full max-w-6xl mt-16 p-10 bg-[#1a1a2e] rounded-xl shadow-md text-center mb-24">
                     <h2 className="text-3xl font-semibold mb-10">Get In Touch Now</h2>
                     <form className="flex flex-col gap-6">
                         <div className="flex gap-4">
