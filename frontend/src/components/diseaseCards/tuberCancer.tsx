@@ -13,7 +13,7 @@ import {
 const tuberCancerLogo = "/brain.png";
 export function TuberCancer() {
   return (
-    <Card  >
+    <Card >
       <CardHeader >
       <div className="flex items-center gap-2">
           <Image
@@ -23,11 +23,13 @@ export function TuberCancer() {
             height={50}
             className="rounded-full filter invert brightness-0"
           />
-          <CardTitle>Tuber Cancer</CardTitle>
+           <CardTitle className="break-words whitespace-normal w-full">
+            Tuberculosis
+          </CardTitle>
         </div>
       </CardHeader>
       <CardContent>
-        <p>Tuber cancer is a disease where cells in the breast grow uncontrollably.</p>
+        <p>Tuberculosis is an infectious disease that primarily affects the lungs.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
        <Link href="/imageuploader/tuberup">

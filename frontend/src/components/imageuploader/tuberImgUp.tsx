@@ -51,7 +51,7 @@ const TuberImgUp = () => {
 
 
     try {
-      const response = await axiosInstance.post("/checklungcancer", formData, {
+      const response = await axiosInstance.post("/checktubercancer", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

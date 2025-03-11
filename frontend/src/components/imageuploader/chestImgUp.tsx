@@ -83,16 +83,16 @@ const ChestImgUp = () => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: { "image/*": [] },
-  });
+  }); 
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F] mb-20">
       <h2 className="text-center text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6">
-        Upload MRI Scan for Chest Cancer Analysis
+        Upload MRI Scan for Lung Cancer Analysis
       </h2>
       <Card className="w-[750px] h-[550px] border-4 mt-2">
         <CardHeader className="flex flex-col items-center justify-center text-center mt-10">
-          <CardTitle>Chest Cancer Prediction</CardTitle>
+          <CardTitle>Lung Cancer Prediction</CardTitle>
           <CardDescription>Drop an image or click to upload – let AI do the rest!</CardDescription>
         </CardHeader>
 

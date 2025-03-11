@@ -6,16 +6,16 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
     {
-        "question": "What are the common symptoms of chest cancer?",
+        "question": "What are the common symptoms of Lung cancer?",
         "answer": "Common symptoms include persistent cough, chest pain, shortness of breath, unexplained weight loss, and coughing up blood."
     },
     {
-        "question": "How is chest cancer diagnosed?",
+        "question": "How is Lung cancer diagnosed?",
         "answer": "Doctors use imaging tests like X-rays, CT scans, and MRIs. A biopsy may be performed for further analysis."
     },
     {
-        "question": "Are all chest cancers the same?",
-        "answer": "No, chest cancer can refer to different types, including lung cancer, thymic cancer, and mesothelioma, each with different characteristics."
+        "question": "Are all Lung cancers the same?",
+        "answer": "No, Lung cancer can refer to different types, including lung cancer, thymic cancer, and mesothelioma, each with different characteristics."
     }
 ]
     ;
@@ -33,10 +33,10 @@ const ChestTumourPage = () => {
                 {/* Left Section - Text Content */}
                 <div className="w-full md:w-1/2 p-6">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        What is Chest Cancer?
+                        What is Lung Cancer?
                     </h2>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Chest cancer refers to cancers that develop in the chest region, including lung cancer and thymus cancer.</li>
+                        <li>Lung cancer refers to cancers that develop in the chest region, such as thymus cancer.</li>
                         <li>It can be benign (non-cancerous) or malignant (cancerous).</li>
                         <li>Common symptoms include persistent cough, chest pain, shortness of breath, and unexplained weight loss.</li>
                         <li>Treatment options include surgery, radiation therapy, chemotherapy, and targeted drug therapy.</li>
@@ -107,19 +107,19 @@ const ChestTumourPage = () => {
                 {/* Right Section - Images */}
                 <div className="w-full md:w-1/2 flex flex-col items-center gap-6">
                     <div className="text-center">
-                        <h3 className="text-4xl font-semibold mb-2">Normal Chest</h3>
+                        <h3 className="text-4xl font-semibold mb-2">Normal Lung</h3>
                         <img
                             src="/diseaseImg/normalChest.jpeg"
-                            alt="Normal Chest"
+                            alt="Normal Lung"
                             className="w-[300px] h-[200px] md:w-[400px] md:h-[250px] rounded-lg shadow-md"
                         />
                     </div>
 
                     <div className="text-center mt-4">
-                        <h3 className="text-4xl font-semibold mb-2">Cancer Chest</h3>
+                        <h3 className="text-4xl font-semibold mb-2">Cancer Lung </h3>
                         <img
                             src="/diseaseImg/cancerChest.jpeg"
-                            alt="Cancer Chest"
+                            alt="Cancer Lung"
                             className="w-[300px] h-[200px] md:w-[400px] md:h-[250px] rounded-lg shadow-md"
                         />
                     </div>

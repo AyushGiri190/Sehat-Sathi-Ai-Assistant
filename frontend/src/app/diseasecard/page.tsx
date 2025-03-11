@@ -36,8 +36,8 @@ export default function HomePage() {
         <h3 className="text-2xl font-semibold text-white">Stay Updated</h3>
         <p className="text-gray-400 mt-2">Subscribe to our newsletter for the latest health updates.</p>
         <div className="mt-4 flex justify-center">
-          <input type="email" placeholder="Enter your email" className="p-2 rounded-l-lg border-2 border-gray-700 focus:outline-none" />
-          <button className="px-4 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600">Subscribe</button>
+          <input type="email" placeholder="Enter your email" className="p-2 rounded-l-lg border-2 border-gray-700 focus:outline-none text-black" />
+          <button className="px-2 py-1 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600">Subscribe</button>
         </div>
       </div>
 

@@ -27,7 +27,7 @@ export function SkinCancer() {
           <CardTitle>Skin Cancer</CardTitle></div>
       </CardHeader>
       <CardContent>
-        <p>Skin cancer is a disease where cells in the breast grow uncontrollably.</p>
+        <p>Skin cancer is the abnormal growth of skin cells, Often caused by UV rays.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
        <Link href="/imageuploader/skinup">
