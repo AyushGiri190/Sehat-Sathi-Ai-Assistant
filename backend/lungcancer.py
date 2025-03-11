@@ -25,7 +25,7 @@ def predict_image_lung(img_path):
     predicted_class = np.argmax(predictions, axis=1)[0]  # Get class index
     print(predicted_class)
     # Assuming you used ImageDataGenerator, retrieve class labels
-    class_indices ={0:"lung_aca",1:"lung_n",2:"lung_scc"}  # Dictionary mapping class names to indices
+    class_indices ={0:"Lung Cancer Type-ACA",1:"Normal",2:"Lung Cancer Type-SCC"}  # Dictionary mapping class names to indices
     predicted_label = class_indices[predicted_class]  # Get class name
     print(f"Predicted Class: {predicted_label}")
     return predicted_label

@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
 from lungcancer import predict_image_lung
+from tuberculosis import predict_image_tuber
 app = Flask(__name__)
 CORS(app)  # Allow all origins (for development)
 
@@ -37,6 +38,29 @@ def upload_image_lung():
     prediction = predict_image_lung(image)
     # prediction="hello"
     return jsonify({"message": f"{prediction}"}), 200
+
+
+
+
+@app.route('/checktubercancer', methods=["POST","GET"])
+def upload_image_tuber():
+    if 'image' not in request.files:
+        return jsonify({"message": "No file part"}), 400
+
+    file = request.files['image']
+    if file.filename == '':
+        return jsonify({"message": "No selected file"}), 400
+    # image = Image.open(file) 
+    image = Image.open(file)  # Open image
+    image = image.resize((300, 300))
+    # You can save the file if needed
+    file.save(f"./{file.filename}")
+    prediction = predict_image_tuber(image)
+    # prediction="hello"
+    return jsonify({"message": f"{prediction}"}), 200
+
+
+
 
 
 

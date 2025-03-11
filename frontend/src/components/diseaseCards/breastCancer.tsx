@@ -25,11 +25,11 @@ export function BreastCancer() {
             height={50}
             className="rounded-full filter invert brightness-100 opacity-60"
           />
-          <CardTitle >Chest Cancer</CardTitle>
+          <CardTitle >Lung Cancer</CardTitle>
         </div>
       </CardHeader>
       <CardContent>
-        <p>Chest cancer is a disease where cells in the Chest grow uncontrollably.</p>
+        <p>Lung cancer is a disease in which cells in the lungs grow uncontrollably.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
         <Link href="/imageuploader/chestup">
