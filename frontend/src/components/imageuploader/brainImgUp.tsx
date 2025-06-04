@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { X, CloudUpload } from "lucide-react"; // Cloud Upload icon
 import { useDropzone } from "react-dropzone"; // Importing useDropzone for drag-and-drop
 import axiosInstance from "@/lib/axiosInstance";
-
+ 
 const BrainImgUp = () => {
   const [progress, setProgress] = React.useState<number>(0);
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
@@ -50,7 +50,7 @@ const BrainImgUp = () => {
 
 
     try {
-      const response = await axiosInstance.post("/checklungcancer", formData, {
+      const response = await axiosInstance.post("/checkbraincancer", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

@@ -63,8 +63,8 @@ const ChestImgUp = () => {
     const response = await axiosInstance.post("/checklungcancer", formData, {
          headers: { "Content-Type": "multipart/form-data" },
       });
-
-     console.log(`${response.data.message}`);
+      alert(`Prediction: ${response.data.message}`);
+    //  console.log(`${response.data.message}`);
     } catch (error) {
      console.error("Upload Error:", error);
      console.log("❌ Error: Failed to upload image.");
