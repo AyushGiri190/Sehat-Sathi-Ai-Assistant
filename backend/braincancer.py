@@ -38,7 +38,7 @@ def predict_image_brain(input_image):
     # Predict
     predictions = model.predict(processed_img)
     confidence = predictions[0][0]
-    predicted_label = "Tumor Detected" if confidence > 0.5 else "No Tumor"
+    predicted_label = "No Tumor" if confidence > 0.5 else "Tumor Detected"
 
     print(f"Prediction: {predicted_label} (Confidence: {confidence:.4f})")
     return predicted_label

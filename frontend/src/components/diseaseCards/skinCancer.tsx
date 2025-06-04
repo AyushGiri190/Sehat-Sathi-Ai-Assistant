@@ -10,24 +10,24 @@ import {
   CardTitle,
 } from "@/components/ui/card" 
 
-const skinCancerLogo = "/skin-cancer.png";
-export function SkinCancer() {
+const skinCancerLogo = "/body.png";
+export function SkinCancer() { 
   return (
     <Card>
       <CardHeader>
       <div className="flex items-center gap-2">
           <Image
             src={skinCancerLogo}
-            alt="Brain Cancer Logo"
+            alt="Breast Cancer Logo"
             width={50} // Adjust size as needed
             height={50}
             className="rounded-full filter invert brightness-100 opacity-60"
           />
         
-          <CardTitle>Skin Cancer</CardTitle></div>
+          <CardTitle>Breast Cancer</CardTitle></div>
       </CardHeader>
       <CardContent>
-        <p>Skin cancer is the abnormal growth of skin cells, Often caused by UV rays.</p>
+        <p>Breast cancer is when breast cells grow abnormally.</p>
       </CardContent>
        <CardFooter className="flex justify-center">
        <Link href="/imageuploader/skinup">

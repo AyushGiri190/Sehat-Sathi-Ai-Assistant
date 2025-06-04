@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const breastCancerLogo = "/body.png";
+const breastCancerLogo = "/lungs.png";
 
 export function BreastCancer() {
   return (
@@ -23,7 +23,7 @@ export function BreastCancer() {
             alt="Breast Cancer Logo"
             width={50}
             height={50}
-            className="rounded-full filter invert brightness-100 opacity-60"
+            className="rounded-full filter invert brightness-0"
           />
           <CardTitle >Lung Cancer</CardTitle>
         </div>

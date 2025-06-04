@@ -11,7 +11,7 @@ function page() {
       <ScrollBar/>
       <div className="custom-scrollbar h-screen overflow-y-auto">
       <div className="ml-6 mt-2">
-      <BreadcrumbWithCustomSeparator currentPage="Skin Cancer"/>
+      <BreadcrumbWithCustomSeparator currentPage="Breast Cancer"/>
       </div>
       <SkinCancerPage/>
       <SkinImgUp/>
