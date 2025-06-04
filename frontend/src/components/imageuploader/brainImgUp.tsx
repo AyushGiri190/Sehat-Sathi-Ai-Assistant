@@ -15,7 +15,7 @@ const BrainImgUp = () => {
   const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
 
   const handleFileChange = (file: File) => {
-    if (!file.type.startsWith("image/")) {
+    if (!file.type.startsWith("image/")) { 
       setErrorMessage("Please upload a valid image file.");
       return;
     }
@@ -53,7 +53,7 @@ const BrainImgUp = () => {
       const response = await axiosInstance.post("/checkbraincancer", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-
+      alert(`Prediction: ${response.data.message}`);
       console.log(`${response.data.message}`);
     } catch (error) {
       console.error("Upload Error:", error);

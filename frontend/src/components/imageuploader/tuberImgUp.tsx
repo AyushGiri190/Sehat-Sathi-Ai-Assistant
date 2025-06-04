@@ -12,7 +12,7 @@ const TuberImgUp = () => {
   const [progress, setProgress] = React.useState<number>(0);
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
   const [imageUrl, setImageUrl] = React.useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = React.useState<string | null>(null); 
 
   const handleFileChange = (file: File) => {
     if (!file.type.startsWith("image/")) {
@@ -54,7 +54,7 @@ const TuberImgUp = () => {
       const response = await axiosInstance.post("/checktubercancer", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-
+      alert(`Prediction: ${response.data.message}`);
       console.log(`${response.data.message}`);
     } catch (error) {
       console.error("Upload Error:", error);

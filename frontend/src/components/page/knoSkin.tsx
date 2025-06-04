@@ -6,17 +6,17 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
     {
-        "question": "What are the common symptoms of skin cancer?",
-        "answer": "Common symptoms include new or changing moles, unusual skin growths, sores that don't heal, and spots that are itchy, bleeding, or painful."
-    },
-    {
-        "question": "How is skin cancer diagnosed?",
-        "answer": "Doctors examine the skin and may perform a biopsy to test suspicious spots for cancerous cells."
-    },
-    {
-        "question": "Can skin cancer be prevented?",
-        "answer": "Yes, using sunscreen, wearing protective clothing, avoiding tanning beds, and limiting sun exposure can help prevent skin cancer."
-    }
+    "question": "What are the common symptoms of breast cancer?",
+    "answer": "Common symptoms include lumps in the breast or underarm, changes in breast size or shape, dimpling of the skin, nipple discharge, or redness."
+},
+{
+    "question": "How is breast cancer diagnosed?",
+    "answer": "Doctors use physical exams, mammograms, ultrasounds, and sometimes biopsies to diagnose breast cancer."
+},
+{
+    "question": "Can breast cancer be prevented?",
+    "answer": "While not all cases can be prevented, maintaining a healthy lifestyle, regular screenings, and knowing family history can help reduce the risk."
+}
 ]
     ;
 
@@ -33,14 +33,14 @@ const SkinCancerPage = () => {
                 {/* Left Section - Text Content */}
                 <div className="w-full md:w-1/2 p-6">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                        What is Skin Cancer?
+                        What is Breast Cancer?
                     </h2>
                     <ul className="list-disc list-inside space-y-2 text-gray-300">
-                        <li>Skin cancer is the abnormal growth of skin cells, often due to UV exposure.</li>
-                        <li>It is the most common type of cancer but is highly treatable if detected early.</li>
-                        <li>There are different types, including basal cell carcinoma, squamous cell carcinoma, and melanoma.</li>
-                        <li>Common symptoms include new or changing moles, sores that don't heal, and unusual skin growths.</li>
-                        <li>Prevention includes using sunscreen, wearing protective clothing, and avoiding excessive sun exposure.</li>
+                        <li>Breast cancer is the abnormal growth of breast cells.</li>
+                        <li>It is one of the most common cancers in women but can be treated successfully if found early.</li>
+                        <li>There are different types, such as ductal carcinoma and lobular carcinoma.</li>
+                        <li>Common signs include lumps in the breast, changes in breast shape or size, and skin changes.</li>
+                        <li>Prevention includes regular screenings, maintaining a healthy lifestyle, and knowing your family history.</li>
                     </ul>
 
                     {/* Frequently Asked Questions */}
@@ -106,19 +106,19 @@ const SkinCancerPage = () => {
                 {/* Right Section - Images */}
                 <div className="w-full md:w-1/2 flex flex-col items-center gap-6">
                     <div className="text-center">
-                        <h3 className="text-4xl font-semibold mb-2">Normal Skin</h3>
+                        <h3 className="text-4xl font-semibold mb-2">Normal Pic</h3>
                         <img
-                            src="/diseaseImg/normalSkin.jpeg"
-                            alt="Normal Skin"
+                            src="/diseaseImg/Brenormal.png"
+                            alt="Normal Breast"
                             className="w-[300px] h-[200px] md:w-[400px] md:h-[250px] rounded-lg shadow-md"
                         />
                     </div>
 
                     <div className="text-center mt-4">
-                        <h3 className="text-4xl font-semibold mb-2">Cancer Skin</h3>
+                        <h3 className="text-4xl font-semibold mb-2">Cancer Pic</h3>
                         <img
-                            src="/diseaseImg/cancerSkin.jpg"
-                            alt="Cancer Skin"
+                            src="/diseaseImg/brecancer.jpg"
+                            alt="Cancer Breast"
                             className="w-[300px] h-[200px] md:w-[400px] md:h-[250px] rounded-lg shadow-md"
                         />
                     </div>

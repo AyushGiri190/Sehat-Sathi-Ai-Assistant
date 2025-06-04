@@ -45,7 +45,7 @@ const ChestImgUp = () => {
     setSelectedFile(null);
     setImageUrl(null);
     setProgress(0);
-    setErrorMessage(null);
+    setErrorMessage(null); 
   };
 
   const handleUpload = async () => {
