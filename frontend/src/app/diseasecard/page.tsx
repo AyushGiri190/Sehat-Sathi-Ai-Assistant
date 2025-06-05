@@ -13,7 +13,7 @@ export default function HomePage() {
           Explore Our Services
         </h2>
         <p className="text-lg text-gray-400 mt-4">
-          "Your Health Matters. Stay Informed, Stay Ahead"
+          "Your Health Matters. Stay Informed, Stay Ahead" 
         </p>
       </div>
       <div className="flex justify-center items-start px-4 mt-16">
