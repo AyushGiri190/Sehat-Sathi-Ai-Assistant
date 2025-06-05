@@ -4,7 +4,9 @@ from PIL import Image
 from lungcancer import predict_image_lung
 from tuberculosis import predict_image_tuber
 from braincancer import predict_image_brain
+from response import get_chatbot_response
 import os
+from utils.chat_history import chat_history
 
 app = Flask(__name__)
 CORS(app)  # Allow all origins (for development)
@@ -90,6 +92,22 @@ def upload_image_brain():
     # prediction="hello"
     return jsonify({"message": f"{prediction}"}), 200
 
+@app.route('/chatbot', methods=["POST","GET"])
+def chatbot():
+    data = request.get_json()
+    if not data or 'message' not in data:
+        return jsonify({"error": "Missing 'message' in request body"}), 400
+
+    user_message = data['message']
+    if not isinstance(user_message, str) or not user_message.strip():
+        return jsonify({"error": "'message' must be a non-empty string"}), 400
+    bot_reply = get_chatbot_response(user_message,chat_history)
+    # Dummy chatbot logic — echo back the message with some prefix
+   # bot_reply = f"You said: {user_message}. This is a demo response."
+
+    # TODO: Replace the above with your AI/chatbot logic
+
+    return jsonify({"reply": bot_reply})
 
 
 
