@@ -30,7 +30,7 @@ const HomePage = () => {
               </div>
             </Link>
 
-            <Link href="/chat-bot">
+            <Link href="/chatbot">
               <div className="group">
                 <button className="flex items-center justify-center px-6 py-3 w-40 bg-black text-white rounded-full font-semibold text-lg shadow-md transition duration-300 hover:bg-white hover:text-black whitespace-nowrap">
                   Chat-Bot

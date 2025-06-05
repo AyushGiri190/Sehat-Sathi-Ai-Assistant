@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import axiosInstance from "@/lib/axiosInstance";
+import Navbar from "@/components/navBar/navBar";
 
 const ChatBotCard = () => {
   const [userMessage, setUserMessage] = useState("");
@@ -54,13 +55,14 @@ const ChatBotCard = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-[#0D0D1F] px-4">
+    <div className="bg-[#0D0D1F] min-h-screen overflow-hidden">
+      <Navbar/>
+    <div className="flex flex-col justify-center items-center h-[calc(100vh-4rem)] bg-[#0D0D1F] pb-10 ">
       <h2 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-[#0D0D1F] to-white my-6 text-center">
         AI Chatbot
       </h2>
-
-      <div className="w-full max-w-xl border-4 border-white/10 flex flex-col bg-gray-900 rounded-lg">
-        <header className="text-center pt-6 text-white">
+       <div className="w-full max-w-xl flex flex-col bg-gray-900 rounded-lg border-4 border-white/10 h-[80vh]">
+        <header className="text-center pt-4 text-white">
           <h3 className="text-2xl font-semibold">Talk to our AI</h3>
           <p className="text-gray-400">Ask questions and get instant responses</p>
         </header>
@@ -116,6 +118,7 @@ const ChatBotCard = () => {
 
         {error && <p className="text-red-500 text-center p-2">{error}</p>}
       </div>
+    </div>
     </div>
   );
 };
