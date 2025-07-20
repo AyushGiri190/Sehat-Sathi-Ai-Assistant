@@ -8,7 +8,7 @@ from tensorflow.keras.optimizers import Adamax
 
 '''Add Code to preprocess the image ready to be predicted  '''
 def preprocess_image(img):
-    #img = image.load_img(img_path, target_size=(224, 224))  # Load and resize image
+    img = image.load_img(img, target_size=(224, 224))  # Load and resize image
     img_array = image.img_to_array(img)  # Convert to array
     img_array = np.expand_dims(img_array, axis=0)  # Expand dims to match batch shape
     #img_array = img_array / 255.0  # Normalize if required
