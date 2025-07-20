@@ -4,6 +4,7 @@ from PIL import Image
 from lungcancer import predict_image_lung
 from tuberculosis import predict_image_tuber
 from braincancer import predict_image_brain
+from Breast_cancer import predict_image_breast
 from response import get_chatbot_response
 import os
 from utils.chat_history import chat_history
@@ -43,8 +44,10 @@ def upload_image_lung():
     # You can save the file if needed
     # file.save(f"./{file.filename}")
     save_path = os.path.join(UPLOAD_FOLDER, file.filename)
+    absolute_path = os.path.abspath(save_path)
     image.save(save_path)
-    prediction = predict_image_lung(image)
+    print(image)
+    prediction = predict_image_lung(absolute_path)
     # prediction="hello"
     return jsonify({"message": f"{prediction}"}), 200
 
@@ -83,7 +86,7 @@ def upload_image_brain():
         return jsonify({"message": "No selected file"}), 400
     # image = Image.open(file) 
     image = Image.open(file.stream)  # Open image
-    image = image.resize((300, 300))
+    image = image.resize((64, 64))
     # You can save the file if needed
     save_path = os.path.join(UPLOAD_FOLDER, file.filename)
     image.save(save_path)
@@ -91,6 +94,28 @@ def upload_image_brain():
     prediction = predict_image_brain(image)
     # prediction="hello"
     return jsonify({"message": f"{prediction}"}), 200
+
+
+
+@app.route('/checkbreastcancer', methods=["POST","GET"])
+def upload_image_breast():
+    if 'image' not in request.files:
+        return jsonify({"message": "No file part"}), 400
+
+    file = request.files['image']
+    if file.filename == '':
+        return jsonify({"message": "No selected file"}), 400
+    # image = Image.open(file) 
+    image = Image.open(file.stream)  # Open image
+    image = image.resize((300, 300))
+    # You can save the file if needed
+    save_path = os.path.join(UPLOAD_FOLDER, file.filename)
+    image.save(save_path)
+    
+    prediction = predict_image_breast(image)
+    # prediction="hello"
+    return jsonify({"message": f"{prediction}"}), 200
+
 
 @app.route('/chatbot', methods=["POST","GET"])
 def chatbot():

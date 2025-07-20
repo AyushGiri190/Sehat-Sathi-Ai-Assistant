@@ -1,27 +1,46 @@
-from keras.preprocessing import image
+from tensorflow.keras.models import load_model
 import numpy as np
-from keras.models import load_model
-import cv2
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.optimizers import Adam
+from PIL import Image
 
+IMG_SIZE = 128  # Image input size used in training
 
-def preprocessing(img_path):
-    img = image.load_img(img_path, target_size=(128,128))
-    norm_img = image.img_to_array(img) / 255
+def preprocess_image(img):
+    # Ensure the image is in RGB
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    
+    # Resize the image to match model input size
+    img = img.resize((IMG_SIZE, IMG_SIZE))
+    
+    # Convert to numpy array
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array /= 255.0  # Normalize to [0, 1]
+    
+    return img_array
 
-    # Converting Image to Numpy Arrayp
-    input_arr_img = np.array([norm_img])
-    return input_arr_img
+def predict_image_breast(input_image):
+    # Load the trained breast cancer model
+    model = load_model("./models/vgg16.h5", compile=False)
+    model.compile(optimizer=Adam(learning_rate=0.000006), loss='categorical_crossentropy', metrics=['accuracy'])
 
+    # Load image if input is a path
+    if isinstance(input_image, str):
+        img = Image.open(input_image)
+    else:
+        img = input_image  # Already a PIL.Image.Image
 
-def predict(img_path):
-    model = load_model('./models/vgg16.h5')
-    img = preprocessing(img_path)
-    pred = np.argmax(model.predict(img))
-    return pred
+    # Preprocess image
+    processed_img = preprocess_image(img)
 
-def breast_cancer(img_path):
-    labels = ["normal","malignant","benign"]
-    prediction = predict(img_path)
-    return labels[prediction]
+    # Predict
+    predictions = model.predict(processed_img)
+    predicted_index = np.argmax(predictions[0])
+    labels = ["Normal", "Cancer", "Cancer"]
+    predicted_label = labels[predicted_index]
+    confidence = predictions[0][predicted_index]
 
-print(breast_cancer('./brcancer.png'))
+    print(f"Prediction: {predicted_label} (Confidence: {confidence:.4f})")
+    return predicted_label

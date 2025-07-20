@@ -23,7 +23,7 @@ def preprocess_image(img):
 
 def predict_image_brain(input_image):
     # Load the trained model
-    model = load_model("./models/model_brain_cancer.h5", compile=False)
+    model = load_model("./models/model_brain_cancer.h5")
     model.compile(optimizer=Adam(learning_rate=0.000006), loss='binary_crossentropy', metrics=['accuracy'])
 
     # Load image if input is a path
