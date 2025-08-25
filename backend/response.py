@@ -4,7 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from context_retriver import retrieve_context
 import os 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAfh1PvgfmlLCwKkoINqYuzdOeGmA4ha0c"  # or set it via environment
+os.environ["GOOGLE_API_KEY"] = "Your API Key"  # or set it via environment
 
 def get_chatbot_response(user_query: str, chat_history: list) -> str:
     history_str = ""
