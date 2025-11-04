@@ -1,4 +1,4 @@
-## ⚕️ Sehat Sathi: Bridging the Healthcare Access Gap
+## ⚕️ Sehat Sathi
 
 Sehat Sathi is an AI-powered assistant designed to democratize access to **medical exposure and preliminary diagnosis**, thereby addressing the significant disparity in healthcare access across different socioeconomic classes.
 
