@@ -1,5 +1,6 @@
 Flask
 flask-cors
+gunicorn
 Pillow  # For PIL (Image)
 tensorflow  # For tensorflow.keras.models, tensorflow.keras.preprocessing, numpy, and general TF usage
 numpy
