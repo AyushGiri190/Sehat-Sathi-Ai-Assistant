@@ -4,7 +4,9 @@ from pinecone import Pinecone
 from config import PINECONE_INDEX_NAME
 from dotenv import load_dotenv
 import os 
-os.environ["PINECONE_API_KEY"] = "Your Pinecone API"
+from dotenv import load_dotenv # Import the function
+load_dotenv()
+os.environ["PINECONE_API_KEY"] =os.getenv('pinecone_key')
 load_dotenv()
 embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
