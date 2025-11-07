@@ -5,11 +5,7 @@ import ContactUs from "@/components/navBar/contactUs";
 import HomePage from "@/components/navBar/home";
 
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout() {
   return (
     <html lang="en">
       <body className="overflow-hidden"> {/* Prevents body scrollbar */}

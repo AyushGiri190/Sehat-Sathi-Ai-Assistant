@@ -18,7 +18,7 @@ const HomePage = () => {
             Sehat-Sathi
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-white leading-tight mt-3">
-            "Your AI Health Companion"
+           &quot;Your AI Health Companion&quot;
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link href="/diseasecard">

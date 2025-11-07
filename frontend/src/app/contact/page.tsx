@@ -1,5 +1,5 @@
 import ContactPage from "@/components/contact/contact"
-import ContactUs from "@/components/navBar/contactUs"
+
 
 function page() {
     return (

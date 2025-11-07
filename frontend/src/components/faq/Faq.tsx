@@ -34,7 +34,7 @@ const FAQPage = () => {
                     {/* Left Section (Image & Heading) */}
                     <div className="w-full md:w-1/2 flex flex-col items-start space-y-6 ml-5">
                         <h1 className="text-5xl font-bold">Frequently Asked <br />Questions</h1>
-                        <p className="text-gray-400 font-bold">Do you have any kind of questions? We're here to help.</p>
+                        <p className="text-gray-400 font-bold">Do you have any kind of questions? We are here to help.</p>
                         <img
                             src="/faq.png"
                             alt="FAQ Illustration"

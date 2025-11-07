@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import axios from "axios";
 import axiosInstance from "@/lib/axiosInstance";
 import Navbar from "@/components/navBar/navBar";
 
