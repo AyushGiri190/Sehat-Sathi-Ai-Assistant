@@ -10,3 +10,4 @@ langchain-pinecone
 pinecone-client  # For pinecone import
 python-dotenv  # For load_dotenv
 langchain-google-genai
+sentence-transformers
