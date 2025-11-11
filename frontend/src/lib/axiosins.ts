@@ -1,8 +1,8 @@
 import axios from "axios";
-const apiUrl = process.env.Image_Url;
-const axiosInstance = axios.create({
+const apiUrl = process.env.Chatbot;
+const axiosIns = axios.create({
   baseURL: apiUrl, // Use this for consistency
   headers: { "Content-Type": "application/json" },
 });
 
-export default axiosInstance;
+export default axiosIns;

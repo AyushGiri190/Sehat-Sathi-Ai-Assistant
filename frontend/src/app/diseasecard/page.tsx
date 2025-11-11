@@ -27,9 +27,6 @@ export default function HomePage() {
           <div className="p-4 hover:-translate-y-8 transition duration-300">
             <SkinCancer />
           </div>
-          <div className="p-4 hover:-translate-y-8 transition duration-300">
-            <TuberCancer />
-          </div>
         </div>
       </div>
       <div className="mt-10 text-center">

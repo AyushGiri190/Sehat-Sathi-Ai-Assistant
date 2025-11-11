@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import axiosInstance from "@/lib/axiosInstance";
+import axiosIns from "@/lib/axiosins";
 import Navbar from "@/components/navBar/navBar";
 
 const ChatBotCard = () => {
@@ -32,7 +32,7 @@ const ChatBotCard = () => {
 
     try {
       console.log("Sending message:", userMessage);
-      const response = await axiosInstance.post("/chatbot", { message: userMessage });
+      const response = await axiosIns.post("/chatbot", { message: userMessage });
 
       console.log("Response:", response.data);
 
